@@ -19,4 +19,21 @@ removeAt(index) that removes the node at the given index
  When you insert or remove a node, consider how it will affect the existing nodes. Some of the nodes will need their nextNode link updated
 /*/
 
+function node () {
+    return {
+        nodeInfo: { value: null, link: null },
 
+        addValue(value) {
+            this.nodeInfo.value = value;
+        },
+
+        addLink(link) {
+            this.nodeInfo.link = link;
+        }
+    };
+}
+
+const myNode = node();
+myNode.addValue(10);
+myNode.addLink('nextNode');
+console.log(myNode.nodeInfo);
