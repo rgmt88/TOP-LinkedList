@@ -129,8 +129,19 @@ function linkedList() {
             return null;    
         },
 
-        // toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+        // Represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+        toString() {
+            let linkedList = '';
+            let current = this.head;
+            while (current !== null) {
+                linkedList += `( ${current.value} ) ->`;
+                current = current.next;
+            }
+            linkedList += 'null';
+            return linkedList;
+        },
 
+        // 
     }
 }
 
