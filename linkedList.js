@@ -1,6 +1,4 @@
 /*/
-toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
-Extra credit
 insertAt(value, index) that inserts a new node with the provided value at the given index.
 removeAt(index) that removes the node at the given index
 /*/
@@ -108,7 +106,7 @@ function linkedList() {
         // Method returns true if the passed in value is in the list and otherwise returns false.
         contains(value) {
             let current = this.head;
-            while (current.next !== null) {
+            while (current !== null) {
                 if (current.value === value) {
                     return true;
                 }
@@ -119,8 +117,20 @@ function linkedList() {
 
         // Method returns the index of the node containing value, or null if not found.
         find(value) {
-            
-        }
+            let current = this.head;
+            let index = 0;
+            while (current !== null) {
+                if (current.value === value) {
+                    return index;
+                }
+                current = current.next;
+                index++;
+            }
+            return null;    
+        },
+
+        // toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+
     }
 }
 
