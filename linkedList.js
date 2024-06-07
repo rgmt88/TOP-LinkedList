@@ -1,7 +1,4 @@
-/*/
-insertAt(value, index) that inserts a new node with the provided value at the given index.
-removeAt(index) that removes the node at the given index
-/*/
+
 // Start a counter for fake addresses
 let addressCounter = 1000;
 
@@ -40,7 +37,7 @@ function linkedList() {
                 this.head = newNode;
                 this.tail = newNode;
             } else {
-                newNode.tail = this.head;
+                newNode.next = this.head;
                 this.head = newNode;
             }
             this.length++;
@@ -129,12 +126,12 @@ function linkedList() {
             return null;    
         },
 
-        // Represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+        // Represents your LinkedList objects as strings, so you can print them out and preview them in the console
         toString() {
             let linkedList = '';
             let current = this.head;
             while (current !== null) {
-                linkedList += `( ${current.value} ) ->`;
+                linkedList += `( ${current.value} ) -> `;
                 current = current.next;
             }
             linkedList += 'null';
@@ -145,3 +142,15 @@ function linkedList() {
     }
 }
 
+// Example usage:
+const list = linkedList();
+list.append(7);
+list.append(88);
+list.prepend(3);
+list.append(28);
+list.prepend(95);
+list.append(5);
+
+console.log(`List: ${list.toString()}`);
+console.log(list.getHead());
+console.log(list.getTail());
